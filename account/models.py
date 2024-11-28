@@ -38,7 +38,11 @@ class Orders(models.Model):
 
     )
 
-    status=models.CharField(max_length=100,default="OrderPlaced")
+    status=models.CharField(max_length=100,default="OrderPlaced",choices=options)
+    def __str__(self):
+        return self.product.title
+
+    
   
 
 
